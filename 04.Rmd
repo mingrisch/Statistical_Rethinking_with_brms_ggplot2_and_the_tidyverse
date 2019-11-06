@@ -35,7 +35,7 @@ pos <-
   rbind(0, .) %>%                             # here we add a row of zeros above the simulation results
   mutate(step = 0:16) %>%                     # this adds a step index
   gather(key, value, -step) %>%               # here we convert the data to the long format
-  mutate(person = rep(1:100, each = 17)) %>%  # this adds a person id index
+  mutate(person = rep(1:1000, each = 17)) %>%  # this adds a person id index
   # the next two lines allow us to make cumulative sums within each person
   group_by(person) %>%
   mutate(position = cumsum(value)) %>%
